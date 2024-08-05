@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}
+<title>My Index Page</title>
+{% endblock %}
+{% block start %}
+  <a href="/contact/">Contact</a> || 
+  <a href="/about/">About</a>
+
+    <h1>HTML Page</h1>
+    <table class="container">
+
+        <tr>
+          <th>S.Number</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+        {% for i in peoples %}
+
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{i.name}}</td>
+          <td>{{i.age}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <p>
+        {% if "cucumber" in veg %}
+            yes Avaliable
+        {% else %}
+            Not Aaliable
+        {% endif %}
+      </p>
+
+{% endblock %}
